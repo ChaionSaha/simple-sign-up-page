@@ -1,0 +1,6 @@
+@mixin animated-icons {
+	animation-name: spin-around;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-duration: 10s;
+}

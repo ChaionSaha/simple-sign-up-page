@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  background: linear-gradient(45deg, #4958cf, #c750c0);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+  height: fit-content;
+  min-width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 67.5%;
+  overflow-x: hidden;
+}
+
+.login-card {
+  height: 73vh;
+  min-height: 40rem;
+  width: 70vw;
+  max-width: 60rem;
+  background-color: #fff;
+  margin: 3vh 2vw;
+  border-radius: 0.6rem;
+  display: flex;
+}
+.login-card div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-card .image {
+  border-right: 1px solid rgba(0, 0, 0, 0.089);
+  position: relative;
+}
+.login-card .image img {
+  height: 35vh;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+.login-card .image .triangle {
+  height: 2vh;
+  width: 2vh;
+  position: absolute;
+  animation-name: spin-around;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+}
+
+@keyframes spin-around {
+  from {
+    transform: rotate(0deg) translate(20vh);
+  }
+  to {
+    transform: rotate(360deg) translate(20vh);
+  }
+}
