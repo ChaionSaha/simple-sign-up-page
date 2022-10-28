@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+
 @import "./variables-and-functions";
 
 *,
@@ -19,7 +21,7 @@ body {
 	min-height: 100vh;
 	height: fit-content;
 	min-width: fit-content;
-	//width: fit-content;
+	font-family: "Merriweather", serif;
 
 	display: flex;
 	justify-content: center;
@@ -50,31 +52,94 @@ body {
 	& .image {
 		border-right: 1px solid rgba(0, 0, 0, 0.089);
 		position: relative;
+		overflow: hidden;
 
-		& img {
-			height: 35vh;
-			//width: 40vw;
+		& img#laptop {
+			height: 15vw;
 			transform-style: preserve-3d;
 			transform: perspective(1000px);
+			border-radius: 50%;
 		}
 
-		& .triangle {
-			height: 2vh;
-			width: 2vh;
+		& div#animated-icons {
 			position: absolute;
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+			height: 27vh;
+			width: 27vh;
+		}
 
-			animation-name: spin-around;
-			animation-timing-function: linear;
-			animation-iteration-count: infinite;
-			animation-duration: 10s;
+		& .circle-1 {
+			@include animation-code(circle-spin-1, 10s, 0deg);
+
+			&::after {
+				content: url(../img/circle.png);
+				@include after-elements;
+			}
+		}
+
+		& .circle-2 {
+			@include animation-code(circle-spin-2, 10s, -180deg);
+
+			&::after {
+				content: url(../img/circle.png);
+				@include after-elements;
+			}
+		}
+
+		& .triangle-1 {
+			@include animation-code(triangle-spin-1, 13s, -100deg);
+
+			&::after {
+				content: url(../img/triangle.png);
+				@include after-elements;
+			}
+		}
+
+		& .triangle-2 {
+			@include animation-code(triangle-spin-2, 13s, -260deg);
+
+			&::after {
+				content: url(../img/triangle.png);
+				@include after-elements;
+			}
+		}
+
+		& :where(.square) {
+			@include animation-code(square-spin, 40s, 90deg);
+
+			&::after {
+				content: url(../img/checkbox-unchecked.png);
+				@include after-elements;
+
+				animation: spin 50s linear;
+				animation-iteration-count: infinite;
+				animation-fill-mode: forwards;
+			}
+		}
+	}
+
+	& div.form {
+		flex-direction: column;
+		row-gap: 10px;
+		font-size: 2vh;
+
+		& div.inputBox {
+			position: relative;
+			& input {
+				width: 50vw;
+				padding: 1vh;
+				outline: none;
+				border: 1px solid #57b846;
+				border-radius: 5px;
+			}
+			& span {
+				position: absolute;
+				left: 2%;
+			}
 		}
 	}
 }
-@keyframes spin-around {
-	from {
-		transform: rotate(0deg) translate(20vh);
-	}
-	to {
-		transform: rotate(360deg) translate(20vh);
-	}
-}
+
+@include all-key-frames;

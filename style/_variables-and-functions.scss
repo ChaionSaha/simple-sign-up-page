@@ -1,6 +1,59 @@
-@mixin animated-icons {
-	animation-name: spin-around;
+@keyframes triangle-spin-around {
+	from {
+		transform: rotate(0deg) translate(10vw, 5vh);
+	}
+	to {
+		transform: rotate(360deg) translate(10vw, 5vh);
+	}
+}
+
+@mixin after-elements {
+	position: absolute;
+	background-size: contain;
+	top: 100%;
+	left: 100%;
+	height: 1vw;
+	width: 1vw;
+}
+
+@mixin animation-code($name, $duration, $rotate) {
+	rotate: $rotate;
+	animation: $name;
+	animation-duration: $duration;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	animation-duration: 10s;
+	animation-fill-mode: forwards;
+}
+
+@mixin all-key-frames {
+	@keyframes circle-spin-1 {
+		to {
+			rotate: 360deg;
+		}
+	}
+	@keyframes circle-spin-2 {
+		to {
+			rotate: 180deg;
+		}
+	}
+	@keyframes triangle-spin-1 {
+		to {
+			rotate: 260deg;
+		}
+	}
+	@keyframes triangle-spin-2 {
+		to {
+			rotate: 100deg;
+		}
+	}
+	@keyframes square-spin {
+		to {
+			rotate: 450deg;
+		}
+	}
+	@keyframes spin {
+		to {
+			rotate: 360deg;
+		}
+	}
 }

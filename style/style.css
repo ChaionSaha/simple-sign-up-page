@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+@keyframes triangle-spin-around {
+  from {
+    transform: rotate(0deg) translate(10vw, 5vh);
+  }
+  to {
+    transform: rotate(360deg) translate(10vw, 5vh);
+  }
+}
 *,
 *::before,
 *::after {
@@ -15,6 +24,7 @@ body {
   min-height: 100vh;
   height: fit-content;
   min-width: fit-content;
+  font-family: "Merriweather", serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,27 +51,157 @@ body {
 .login-card .image {
   border-right: 1px solid rgba(0, 0, 0, 0.089);
   position: relative;
+  overflow: hidden;
 }
-.login-card .image img {
-  height: 35vh;
+.login-card .image img#laptop {
+  height: 15vw;
   transform-style: preserve-3d;
   transform: perspective(1000px);
+  border-radius: 50%;
 }
-.login-card .image .triangle {
-  height: 2vh;
-  width: 2vh;
+.login-card .image div#animated-icons {
   position: absolute;
-  animation-name: spin-around;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  height: 27vh;
+  width: 27vh;
+}
+.login-card .image .circle-1 {
+  rotate: 0deg;
+  animation: circle-spin-1;
+  animation-duration: 10s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+.login-card .image .circle-1::after {
+  content: url(../img/circle.png);
+  position: absolute;
+  background-size: contain;
+  top: 100%;
+  left: 100%;
+  height: 1vw;
+  width: 1vw;
+}
+.login-card .image .circle-2 {
+  rotate: -180deg;
+  animation: circle-spin-2;
   animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+.login-card .image .circle-2::after {
+  content: url(../img/circle.png);
+  position: absolute;
+  background-size: contain;
+  top: 100%;
+  left: 100%;
+  height: 1vw;
+  width: 1vw;
+}
+.login-card .image .triangle-1 {
+  rotate: -100deg;
+  animation: triangle-spin-1;
+  animation-duration: 13s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+.login-card .image .triangle-1::after {
+  content: url(../img/triangle.png);
+  position: absolute;
+  background-size: contain;
+  top: 100%;
+  left: 100%;
+  height: 1vw;
+  width: 1vw;
+}
+.login-card .image .triangle-2 {
+  rotate: -260deg;
+  animation: triangle-spin-2;
+  animation-duration: 13s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+.login-card .image .triangle-2::after {
+  content: url(../img/triangle.png);
+  position: absolute;
+  background-size: contain;
+  top: 100%;
+  left: 100%;
+  height: 1vw;
+  width: 1vw;
+}
+.login-card .image :where(.square) {
+  rotate: 90deg;
+  animation: square-spin;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+.login-card .image :where(.square)::after {
+  content: url(../img/checkbox-unchecked.png);
+  position: absolute;
+  background-size: contain;
+  top: 100%;
+  left: 100%;
+  height: 1vw;
+  width: 1vw;
+  animation: spin 50s linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+.login-card div.form {
+  flex-direction: column;
+  row-gap: 10px;
+  font-size: 2vh;
+}
+.login-card div.form div.inputBox {
+  position: relative;
+}
+.login-card div.form div.inputBox input {
+  width: 50vw;
+  padding: 1vh;
+  outline: none;
+  border: 1px solid #57b846;
+  border-radius: 5px;
+}
+.login-card div.form div.inputBox span {
+  position: absolute;
+  left: 2%;
 }
 
-@keyframes spin-around {
-  from {
-    transform: rotate(0deg) translate(20vh);
-  }
+@keyframes circle-spin-1 {
   to {
-    transform: rotate(360deg) translate(20vh);
+    rotate: 360deg;
+  }
+}
+@keyframes circle-spin-2 {
+  to {
+    rotate: 180deg;
+  }
+}
+@keyframes triangle-spin-1 {
+  to {
+    rotate: 260deg;
+  }
+}
+@keyframes triangle-spin-2 {
+  to {
+    rotate: 100deg;
+  }
+}
+@keyframes square-spin {
+  to {
+    rotate: 450deg;
+  }
+}
+@keyframes spin {
+  to {
+    rotate: 360deg;
   }
 }
