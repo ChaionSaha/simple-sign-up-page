@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "./variables-and-functions";
 
+$color-green: #57b846;
+
 *,
 *::before,
 *::after {
@@ -50,7 +52,7 @@ body {
 	}
 
 	& .image {
-		border-right: 1px solid rgba(0, 0, 0, 0.089);
+		//border-right: 1px solid rgba(0, 0, 0, 0.089);
 		position: relative;
 		overflow: hidden;
 
@@ -71,7 +73,7 @@ body {
 		}
 
 		& .circle-1 {
-			@include animation-code(circle-spin-1, 10s, 0deg);
+			@include animation-code(circle-spin-1, 13s, 0deg);
 
 			&::after {
 				content: url(../img/circle.png);
@@ -80,7 +82,7 @@ body {
 		}
 
 		& .circle-2 {
-			@include animation-code(circle-spin-2, 10s, -180deg);
+			@include animation-code(circle-spin-2, 13s, -180deg);
 
 			&::after {
 				content: url(../img/circle.png);
@@ -149,10 +151,12 @@ body {
 				//letter-spacing: 1px;
 				transition: all 0.3s;
 				pointer-events: none;
-				color: rgba(0, 0, 0, 0.7);
-
+				color: rgba(0, 0, 0, 0.5);
+				font-size: 85%;
 				background: #fff;
 				padding: 3px;
+
+				letter-spacing: 1px;
 			}
 
 			& input:not(:placeholder-shown),
@@ -165,10 +169,11 @@ body {
 				letter-spacing: 0;
 				top: -1vh;
 				left: 1vh;
-				border-left: 1px solid #57b846;
-				border-right: 1px solid #57b846;
-				color: #000;
-				font-size: 85%;
+				border-left: 1px solid $color-green;
+				border-right: 1px solid $color-green;
+				color: $color-green;
+				font-size: 75%;
+				text-transform: uppercase;
 			}
 		}
 
@@ -180,7 +185,7 @@ body {
 				width: 100%;
 				padding: 1vw;
 				cursor: pointer;
-				background: #57b846;
+				background: $color-green;
 				font-weight: 700;
 				color: #fff;
 				outline: none;
