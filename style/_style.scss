@@ -158,6 +158,8 @@ body {
 				background: #fff;
 				padding: 3px;
 				letter-spacing: 1px;
+
+				white-space: pre-wrap;
 			}
 
 			& input:not(:placeholder-shown),

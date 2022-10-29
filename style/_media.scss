@@ -1,0 +1,15 @@
+@media screen and (max-width: 900px) {
+	.login-card {
+		& div.image {
+			width: 0px;
+		}
+
+		& div.form {
+			width: 100%;
+
+			& div.inputBox {
+				width: 40%;
+			}
+		}
+	}
+}

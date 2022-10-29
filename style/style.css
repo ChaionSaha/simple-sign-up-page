@@ -201,6 +201,7 @@ body {
   background: #fff;
   padding: 3px;
   letter-spacing: 1px;
+  white-space: pre-wrap;
 }
 .login-card div.form div.inputBox input:not(:placeholder-shown), .login-card div.form div.inputBox input:focus {
   border: 1px solid #57b846;
@@ -279,5 +280,16 @@ body {
 @keyframes spin {
   to {
     rotate: 360deg;
+  }
+}
+@media screen and (max-width: 900px) {
+  .login-card div.image {
+    width: 0px;
+  }
+  .login-card div.form {
+    width: 100%;
+  }
+  .login-card div.form div.inputBox {
+    width: 40%;
   }
 }
