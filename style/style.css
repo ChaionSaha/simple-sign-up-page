@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @keyframes triangle-spin-around {
   from {
     transform: rotate(0deg) translate(10vw, 5vh);
@@ -30,6 +29,7 @@ body {
   align-items: center;
   font-size: 67.5%;
   overflow-x: hidden;
+  position: relative;
 }
 
 .login-card {
@@ -63,8 +63,8 @@ body {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  height: 27vh;
-  width: 27vh;
+  height: 12vw;
+  width: 12vw;
 }
 .login-card .image .circle-1 {
   rotate: 0deg;
@@ -75,13 +75,16 @@ body {
   animation-fill-mode: forwards;
 }
 .login-card .image .circle-1::after {
-  content: url(../img/circle.png);
+  background: url(../img/circle.png);
+  content: "";
+  background-size: 40%;
   position: absolute;
-  background-size: contain;
   top: 100%;
   left: 100%;
   height: 1vw;
   width: 1vw;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .login-card .image .circle-2 {
   rotate: -180deg;
@@ -92,13 +95,16 @@ body {
   animation-fill-mode: forwards;
 }
 .login-card .image .circle-2::after {
-  content: url(../img/circle.png);
+  background: url(../img/circle.png);
+  content: "";
+  background-size: 10%;
   position: absolute;
-  background-size: contain;
   top: 100%;
   left: 100%;
   height: 1vw;
   width: 1vw;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .login-card .image .triangle-1 {
   rotate: -100deg;
@@ -109,13 +115,16 @@ body {
   animation-fill-mode: forwards;
 }
 .login-card .image .triangle-1::after {
-  content: url(../img/triangle.png);
+  background: url(../img/triangle.png);
+  content: "";
+  background-size: 40%;
   position: absolute;
-  background-size: contain;
   top: 100%;
   left: 100%;
   height: 1vw;
   width: 1vw;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .login-card .image .triangle-2 {
   rotate: -260deg;
@@ -126,13 +135,16 @@ body {
   animation-fill-mode: forwards;
 }
 .login-card .image .triangle-2::after {
-  content: url(../img/triangle.png);
+  background: url(../img/triangle.png);
+  content: "";
+  background-size: 40%;
   position: absolute;
-  background-size: contain;
   top: 100%;
   left: 100%;
   height: 1vw;
   width: 1vw;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .login-card .image :where(.square) {
   rotate: 90deg;
@@ -143,13 +155,16 @@ body {
   animation-fill-mode: forwards;
 }
 .login-card .image :where(.square)::after {
-  content: url(../img/checkbox-unchecked.png);
+  background: url("../img/checkbox-unchecked.png");
+  content: "";
+  background-size: 30%;
   position: absolute;
-  background-size: contain;
   top: 100%;
   left: 100%;
   height: 1vw;
   width: 1vw;
+  background-repeat: no-repeat;
+  background-size: contain;
   animation: spin 50s linear;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
@@ -217,6 +232,23 @@ body {
 }
 .login-card div.form .buttons button:hover {
   background: #333;
+}
+
+.passwordSVG {
+  position: absolute;
+  left: 105%;
+  width: 2vw;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.notificationDiv {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  border: 1px solid black;
+  padding: 1% 2%;
 }
 
 @keyframes circle-spin-1 {

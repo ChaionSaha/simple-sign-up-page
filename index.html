@@ -29,16 +29,26 @@
 			<div class="form">
 				<h3>Member Sign Up</h3>
 				<div class="inputBox">
-					<input type="text" id="name" placeholder=" " />
+					<input type="text" id="name" placeholder=" " required />
 					<span>Name</span>
 				</div>
 				<div class="inputBox">
-					<input type="email" id="email" placeholder=" " />
+					<input type="email" id="email" placeholder=" " required />
 					<span>Email</span>
 				</div>
 				<div class="inputBox">
-					<input type="password" id="password" placeholder=" " />
+					<input
+						type="password"
+						id="password"
+						placeholder=" "
+						required
+					/>
 					<span>Password</span>
+					<img
+						src="./img/eye.png"
+						class="showPass passwordSVG"
+						id="passwordView"
+					/>
 				</div>
 				<div class="inputBox">
 					<input
@@ -49,11 +59,12 @@
 					<span>Confirm Password</span>
 				</div>
 				<div class="buttons">
-					<button>Sign Up</button>
+					<button class="signUpButton">Sign Up</button>
 				</div>
 			</div>
 		</main>
 
 		<script type="text/javascript" src="./script/vanilla-tilt.js"></script>
+		<script src="./script/script.js"></script>
 	</body>
 </html>

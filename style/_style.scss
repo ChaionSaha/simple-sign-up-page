@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "./variables-and-functions";
 
 $color-green: #57b846;
@@ -31,6 +31,7 @@ body {
 	font-size: 67.5%;
 
 	overflow-x: hidden;
+	position: relative;
 }
 
 .login-card {
@@ -64,20 +65,21 @@ body {
 		}
 
 		& div#animated-icons {
+			//border: 1px solid black;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			translate: -50% -50%;
-			height: 27vh;
-			width: 27vh;
+			height: 12vw;
+			width: 12vw;
 		}
 
 		& .circle-1 {
 			@include animation-code(circle-spin-1, 13s, 0deg);
 
 			&::after {
-				content: url(../img/circle.png);
-				@include after-elements;
+				background: url(../img/circle.png);
+				@include after-elements(40%);
 			}
 		}
 
@@ -85,8 +87,8 @@ body {
 			@include animation-code(circle-spin-2, 13s, -180deg);
 
 			&::after {
-				content: url(../img/circle.png);
-				@include after-elements;
+				background: url(../img/circle.png);
+				@include after-elements(10%);
 			}
 		}
 
@@ -94,8 +96,8 @@ body {
 			@include animation-code(triangle-spin-1, 13s, -100deg);
 
 			&::after {
-				content: url(../img/triangle.png);
-				@include after-elements;
+				background: url(../img/triangle.png);
+				@include after-elements(40%);
 			}
 		}
 
@@ -103,8 +105,8 @@ body {
 			@include animation-code(triangle-spin-2, 13s, -260deg);
 
 			&::after {
-				content: url(../img/triangle.png);
-				@include after-elements;
+				background: url(../img/triangle.png);
+				@include after-elements(40%);
 			}
 		}
 
@@ -112,8 +114,8 @@ body {
 			@include animation-code(square-spin, 40s, 90deg);
 
 			&::after {
-				content: url(../img/checkbox-unchecked.png);
-				@include after-elements;
+				background: url("../img/checkbox-unchecked.png");
+				@include after-elements(30%);
 
 				animation: spin 50s linear;
 				animation-iteration-count: infinite;
@@ -135,8 +137,8 @@ body {
 
 		& div.inputBox {
 			position: relative;
-			// border: 1px solid black;
 			width: 17vw;
+
 			& input {
 				width: 100%;
 				padding: 1vw;
@@ -155,13 +157,12 @@ body {
 				font-size: 85%;
 				background: #fff;
 				padding: 3px;
-
 				letter-spacing: 1px;
 			}
 
 			& input:not(:placeholder-shown),
 			& input:focus {
-				border: 1px solid #57b846;
+				border: 1px solid $color-green;
 			}
 
 			& input:not(:placeholder-shown) + span,
@@ -199,6 +200,24 @@ body {
 			}
 		}
 	}
+}
+
+.passwordSVG {
+	position: absolute;
+	left: 105%;
+	width: 2vw;
+	cursor: pointer;
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.notificationDiv {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	border: 1px solid black;
+	padding: 1% 2%;
+	//width: 50px;
 }
 
 @include all-key-frames;

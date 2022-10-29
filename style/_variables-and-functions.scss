@@ -7,13 +7,16 @@
 	}
 }
 
-@mixin after-elements {
+@mixin after-elements($size) {
+	content: "";
+	background-size: $size;
 	position: absolute;
-	background-size: contain;
 	top: 100%;
 	left: 100%;
 	height: 1vw;
 	width: 1vw;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 @mixin animation-code($name, $duration, $rotate) {
