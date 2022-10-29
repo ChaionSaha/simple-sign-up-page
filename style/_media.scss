@@ -1,4 +1,4 @@
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
 	.login-card {
 		& div.image {
 			width: 0px;
@@ -6,10 +6,24 @@
 
 		& div.form {
 			width: 100%;
+			font-size: 2vw;
+
+			& h3 {
+				font-size: 4vw;
+			}
 
 			& div.inputBox {
-				width: 40%;
+				width: 50vw;
+
+				& input {
+					padding: 3vw 2vw;
+				}
 			}
 		}
+	}
+
+	.passwordSVG {
+		width: 5vw;
+		left: 100%;
 	}
 }

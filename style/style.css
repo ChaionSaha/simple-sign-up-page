@@ -282,14 +282,25 @@ body {
     rotate: 360deg;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .login-card div.image {
     width: 0px;
   }
   .login-card div.form {
     width: 100%;
+    font-size: 2vw;
+  }
+  .login-card div.form h3 {
+    font-size: 4vw;
   }
   .login-card div.form div.inputBox {
-    width: 40%;
+    width: 50vw;
+  }
+  .login-card div.form div.inputBox input {
+    padding: 3vw 2vw;
+  }
+  .passwordSVG {
+    width: 5vw;
+    left: 100%;
   }
 }
