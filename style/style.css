@@ -252,6 +252,12 @@ body {
   padding: 1% 2%;
 }
 
+.signupConfirmation {
+  font-size: 7vw;
+  -webkit-text-stroke: 1px black;
+  color: transparent;
+}
+
 @keyframes circle-spin-1 {
   to {
     rotate: 360deg;
